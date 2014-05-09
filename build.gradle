@@ -1,55 +1,11 @@
-task hello << {
-        println 'Hello world!'
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
 }
 
-task upper << {
-    String someString = 'mY_nAmE'
-    println "Original: " + someString
-    println "Upper case: " + someString.toUpperCase()
-}
-
-//Using Groovy in Gradle's tasks
-task count << {
-    4.times { print "$it " }
-}
-
-//Declaration of dependencies between tasks
-task intro(dependsOn: hello) << {
-    println "I'm Gradle"
-}
-
-//Dynamic creation of a task
-4.times { counter ->
-    task "task$counter" << {
-        println "I'm task number $counter"
-    }
-}
-
-//Accessing task as a property of the build script
-hello.doLast {
-    println "Greetings from the $hello.name task."
-}
-
-//Adding extra properties to a task
-task myTask {
-    ext.myProperty = "myValue"
-}
-
-task printTaskProperties << {
-    println myTask.myProperty
-}
-
-//default tasks
-defaultTasks 'clean', 'run'
-
-task clean << {
-    println 'Default Cleaning!'
-}
-
-task run << {
-    println 'Default Running!'
-}
-
-task other << {
-    println "I'm not a default task!"
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile 'org.assertj:assertj-core:1.5.0'
 }
