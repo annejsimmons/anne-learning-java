@@ -34,5 +34,5 @@ dependencies {
 }
 
 run{
-    args 'server', 'hello-world.yml'
+    args 'server', 'config/hello-world.yml'
 }
