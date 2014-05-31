@@ -2,12 +2,7 @@ package com.example.helloworld.resources;
 
 import com.example.helloworld.core.Saying;
 import com.google.common.base.Optional;
-import org.junit.Before;
-import org.junit.ClassRule;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
