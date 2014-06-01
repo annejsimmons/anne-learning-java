@@ -2,9 +2,26 @@ This repo is following my journey of ramping up onto a java project coming from 
 
 Prerequisites
 
-- Java SDK 1.8
+- Homebrew
+<pre> <code>
+> ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+</code> </pre>
+
 - Gradle
-    export PATH=/Users/annejsimmons/libs/gradle/bin:$PATH
+<pre> <code>
+> brew install gradle
+</code> </pre>
+
+- Java JDK
+<pre> <code>
+> brew install caskroom/cask/brew-cask
+> brew cask install java
+
+> /usr/libexec/java_home -V
+> export JAVA_HOME=$(/usr/libexec/java_home)
+> echo $JAVA_HOME
+</code> </pre>
+
 - IntelliJ
 
 
